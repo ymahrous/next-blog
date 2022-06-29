@@ -5,12 +5,12 @@ import utilStyles from '../../styles/utils.module.css';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
 export async function getStaticProps({ params }) {
-    const postData = await getPostData(params.id)
+    const postData = await getPostData(params.id);
     return {
       props: {
         postData
       }
-    }
+    };
 }
 
 export async function getStaticPaths() {
@@ -19,7 +19,7 @@ export async function getStaticPaths() {
     paths,
     fallback: false,
   };
-}
+};
 
 export default function Post({ postData }) {
     return (
@@ -36,4 +36,4 @@ export default function Post({ postData }) {
         </article>
       </Layout>
     );
-}
+};
